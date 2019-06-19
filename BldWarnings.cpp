@@ -11,7 +11,6 @@ BldWarnings::BldWarnings()
 	Console_Output("Loading Building Warnings Plugin... - By MasterCan\n");
 	static BldWarnings Instance;
 	Instance.Register_Object_Event(DAObjectEvent::DAMAGERECEIVED, DAObjectEvent::ObjectType::ALL, 10);
-	Instance.Register_Object_Event(DAObjectEvent::DAMAGEDEALT, DAObjectEvent::ObjectType::ALL, 10);
 	Announce75 = true;
 	Announce50 = true;
 	Announce25 = true;
@@ -21,7 +20,6 @@ BldWarnings::~BldWarnings()
 	Console_Output("Unloading Building Warnings... - By MasterCan\n");
 	static BldWarnings Instance;
 	Instance.Unregister_Object_Event(DAObjectEvent::DAMAGERECEIVED);
-	Instance.Unregister_Object_Event(DAObjectEvent::DAMAGEDEALT);
 }
 
 void BldWarnings::Damage_Event(DamageableGameObj *Victim, ArmedGameObj *Damager, float Damage, unsigned int Warhead, float Scale, DADamageType::Type Type)
