@@ -190,7 +190,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
                         Params->Message = Format25;
                         Params->State = WarnState::WARNSTATE_25;
 
-                        FormatStateMessage(Params, Format);
+                        FormatStateMessage(Params);
                         SendStateMessage(Params);
                     }
                 }
@@ -201,7 +201,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
                         Params->Message = Format50;
                         Params->State = WarnState::WARNSTATE_50;
 
-                        FormatStateMessage(Params, Format);
+                        FormatStateMessage(Params);
                         SendStateMessage(Params);
                     }
                 }
@@ -212,7 +212,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
                         Params->Message = Format75;
                         Params->State = WarnState::WARNSTATE_75;
 
-                        FormatStateMessage(Params, Format);
+                        FormatStateMessage(Params);
                         SendStateMessage(Params);
                     }
                 }
@@ -226,7 +226,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
                         Params->Message = Format25;
                         Params->State = WarnState::WARNSTATE_25;
 
-                        FormatStateMessage(Params, Format);
+                        FormatStateMessage(Params);
                         SendStateMessage(Params);
                     }
                 }
@@ -237,7 +237,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
                         Params->Message = Format50;
                         Params->State = WarnState::WARNSTATE_50;
 
-                        FormatStateMessage(Params, Format);
+                        FormatStateMessage(Params);
                         SendStateMessage(Params);
                     }
                 }
@@ -248,7 +248,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
                         Params->Message = Format75;
                         Params->State = WarnState::WARNSTATE_75;
 
-                        FormatStateMessage(Params, Format);
+                        FormatStateMessage(Params);
                         SendStateMessage(Params);
                     }
                 }
@@ -258,7 +258,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
                     Params->Message = FormatRepairing;
                     Params->State = WarnState::WARNSTATE_REPAIRING;
 
-                    FormatStateMessage(Params, Format);
+                    FormatStateMessage(Params);
                     SendStateMessage(Params);
                 }
             }
@@ -331,7 +331,7 @@ void UP_Building_Warnings::SendStateMessage(FormatParams *Params)
     }
 }
 
-void UP_Building_Warnings::FormatStateMessage(FormatParams *Params, StringClass &Out)
+void UP_Building_Warnings::FormatStateMessage(FormatParams *Params)
 {
     (*Params->Out) += Params->Message;
     Params->Out->Replace("{TEAM}", Get_Team_Name(Params->Team));

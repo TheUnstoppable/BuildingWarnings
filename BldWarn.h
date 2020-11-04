@@ -38,7 +38,7 @@ struct FormatParams
 class UP_Building_Warnings : public DAEventClass, public DAGameFeatureClass {
 public:
 	void SendStateMessage(FormatParams *Params);
-	void FormatStateMessage(FormatParams *Params, StringClass& Out);
+	void FormatStateMessage(FormatParams *Params);
 protected:
 	void Init() override;
 	void Settings_Loaded_Event() override;
