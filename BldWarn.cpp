@@ -17,9 +17,7 @@
 
 #include "General.h"
 //Engine
-#include "engine_def.h"
 #include "engine_io.h"
-#include "engine_math.h"
 #include "engine_obj.h"
 #include "engine_player.h"
 #include "engine_tdb.h"
