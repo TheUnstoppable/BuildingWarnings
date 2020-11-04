@@ -22,7 +22,7 @@
 #include "da_event.h"
 
 #define CompileTime StringFormat("%s %s", __DATE__, __TIME__)
-#define Version 1.1f
+#define Version 1.3f
 
 enum WarnState
 {
