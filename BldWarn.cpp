@@ -142,10 +142,10 @@ void UP_Building_Warnings::Settings_Loaded_Event()
     UseDAPrefix = INI->Get_Bool("Settings", "UseDAPrefix", true);
     UseTeamColors = INI->Get_Bool("Settings", "UseTeamColors", true);
 
-    Enable75 = INI->Get_Bool("Enable", "Enable75", true);
-    Enable50 = INI->Get_Bool("Enable", "Enable50", true);
-    Enable25 = INI->Get_Bool("Enable", "Enable25", true);
-    EnableRepairing = INI->Get_Bool("Enable", "EnableRepairing", true);
+    Enable75 = INI->Get_Bool("Enable", "Percent75", true);
+    Enable50 = INI->Get_Bool("Enable", "Percent50", true);
+    Enable25 = INI->Get_Bool("Enable", "Percent25", true);
+    EnableRepairing = INI->Get_Bool("Enable", "Repairing", true);
 
     IncludeList.Clear();
     INISection* IncludeSection = INI->Get_Section("Includes");
