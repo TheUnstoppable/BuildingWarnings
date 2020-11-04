@@ -53,26 +53,26 @@ DASettingsClass* UP_Building_Warnings::INI = 0;
 
 // Using static, because values are unavailable outside of Settings_Loaded_Event when non-static.
 // I don't have time, at least works.
-StringClass UP_Building_Warnings::Format75;
-StringClass UP_Building_Warnings::Format50;
-StringClass UP_Building_Warnings::Format25;
-StringClass UP_Building_Warnings::FormatRepairing;
-DynamicVectorClass<StringClass> UP_Building_Warnings::IncludeList;
-DynamicVectorClass<StringClass> UP_Building_Warnings::ExcludeList;
-bool UP_Building_Warnings::ReportVehicleBuildings;
-bool UP_Building_Warnings::ShowEnemy;
-bool UP_Building_Warnings::UseDAPrefix;
-bool UP_Building_Warnings::UseTeamColors;
-float UP_Building_Warnings::PercentCooldown;
-float UP_Building_Warnings::RepairCooldown;
-Vector3 UP_Building_Warnings::Color75;
-Vector3 UP_Building_Warnings::Color50;
-Vector3 UP_Building_Warnings::Color25;
-Vector3 UP_Building_Warnings::ColorRepairing;
-bool UP_Building_Warnings::Enable75;
-bool UP_Building_Warnings::Enable50;
-bool UP_Building_Warnings::Enable25;
-bool UP_Building_Warnings::EnableRepairing;
+//StringClass UP_Building_Warnings::Format75;
+//StringClass UP_Building_Warnings::Format50;
+//StringClass UP_Building_Warnings::Format25;
+//StringClass UP_Building_Warnings::FormatRepairing;
+//DynamicVectorClass<StringClass> UP_Building_Warnings::IncludeList;
+//DynamicVectorClass<StringClass> UP_Building_Warnings::ExcludeList;
+//bool UP_Building_Warnings::ReportVehicleBuildings;
+//bool UP_Building_Warnings::ShowEnemy;
+//bool UP_Building_Warnings::UseDAPrefix;
+//bool UP_Building_Warnings::UseTeamColors;
+//float UP_Building_Warnings::PercentCooldown;
+//float UP_Building_Warnings::RepairCooldown;
+//Vector3 UP_Building_Warnings::Color75;
+//Vector3 UP_Building_Warnings::Color50;
+//Vector3 UP_Building_Warnings::Color25;
+//Vector3 UP_Building_Warnings::ColorRepairing;
+//bool UP_Building_Warnings::Enable75;
+//bool UP_Building_Warnings::Enable50;
+//bool UP_Building_Warnings::Enable25;
+//bool UP_Building_Warnings::EnableRepairing;
 
 void UP_Building_Warnings::Init()
 {

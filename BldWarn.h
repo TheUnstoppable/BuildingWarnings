@@ -56,26 +56,26 @@ private:
 	static const char Sounds[4][2][50];
 	static DASettingsClass *INI;
 
-	static StringClass Format75;
-	static StringClass Format50;
-	static StringClass Format25;
-	static StringClass FormatRepairing;
-	static DynamicVectorClass<StringClass> IncludeList;
-	static DynamicVectorClass<StringClass> ExcludeList;
-	static bool ReportVehicleBuildings;
-	static bool ShowEnemy;
-	static bool UseDAPrefix;
-	static bool UseTeamColors;
-	static float PercentCooldown;
-	static float RepairCooldown;
-	static Vector3 Color75;
-	static Vector3 Color50;
-	static Vector3 Color25;
-	static Vector3 ColorRepairing;
-	static bool Enable75;
-	static bool Enable50;
-	static bool Enable25;
-	static bool EnableRepairing;
+	/* static */ StringClass Format75;
+	/* static */ StringClass Format50;
+	/* static */ StringClass Format25;
+	/* static */ StringClass FormatRepairing;
+	/* static */ DynamicVectorClass<StringClass> IncludeList;
+	/* static */ DynamicVectorClass<StringClass> ExcludeList;
+	/* static */ bool ReportVehicleBuildings;
+	/* static */ bool ShowEnemy;
+	/* static */ bool UseDAPrefix;
+	/* static */ bool UseTeamColors;
+	/* static */ float PercentCooldown;
+	/* static */ float RepairCooldown;
+	/* static */ Vector3 Color75;
+	/* static */ Vector3 Color50;
+	/* static */ Vector3 Color25;
+	/* static */ Vector3 ColorRepairing;
+	/* static */ bool Enable75;
+	/* static */ bool Enable50;
+	/* static */ bool Enable25;
+	/* static */ bool EnableRepairing;
 };
 
 #endif
