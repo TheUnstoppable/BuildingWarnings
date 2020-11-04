@@ -194,7 +194,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
             {
                 if (Previous / Max > 0.25f && Total / Max < 0.25f)
                 {
-                    if (!Format25.Is_Empty())
+                    if (!Format25.Is_Empty() && Enable25)
                     {
                         Params->Message = Format25;
                         Params->State = WarnState::WARNSTATE_25;
@@ -205,7 +205,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
                 }
                 else if (Previous / Max > 0.50f && Total / Max < 0.50f)
                 {
-                    if (!Format50.Is_Empty())
+                    if (!Format50.Is_Empty() && Enable50)
                     {
                         Params->Message = Format50;
                         Params->State = WarnState::WARNSTATE_50;
@@ -216,7 +216,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
                 }
                 else if (Previous / Max > 0.75f && Total / Max < 0.75f)
                 {
-                    if (!Format75.Is_Empty())
+                    if (!Format75.Is_Empty() && Enable75)
                     {
                         Params->Message = Format75;
                         Params->State = WarnState::WARNSTATE_75;
@@ -230,7 +230,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
             {
                 if (Previous / Max < 0.25f && Total / Max > 0.25f)
                 {
-                    if (!Format25.Is_Empty())
+                    if (!Format25.Is_Empty() && Enable25)
                     {
                         Params->Message = Format25;
                         Params->State = WarnState::WARNSTATE_25;
@@ -241,7 +241,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
                 }
                 else if (Previous / Max < 0.50f && Total / Max > 0.50f)
                 {
-                    if (!Format50.Is_Empty())
+                    if (!Format50.Is_Empty() && Enable50)
                     {
                         Params->Message = Format50;
                         Params->State = WarnState::WARNSTATE_50;
@@ -252,7 +252,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
                 }
                 else if (Previous / Max < 0.75f && Total / Max > 0.75f)
                 {
-                    if (!Format75.Is_Empty())
+                    if (!Format75.Is_Empty() && Enable75)
                     {
                         Params->Message = Format75;
                         Params->State = WarnState::WARNSTATE_75;
@@ -262,7 +262,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
                     }
                 }
 
-                if (!FormatRepairing.Is_Empty())
+                if (!FormatRepairing.Is_Empty() && EnableRepairing)
                 {
                     Params->Message = FormatRepairing;
                     Params->State = WarnState::WARNSTATE_REPAIRING;
