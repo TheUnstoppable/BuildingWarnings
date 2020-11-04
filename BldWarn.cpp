@@ -108,8 +108,6 @@ void UP_Building_Warnings::Init()
 
     Register_Event(DAEvent::SETTINGSLOADED);
     Register_Object_Event(DAObjectEvent::DAMAGERECEIVED, DAObjectEvent::ALL, INT_MAX);
-    
-    Start_Timer(100, 1.0f, true, 0);
 
     Console_Output("%sBuilding Warnings successfully initialized!\n", DA::Get_Message_Prefix());
     Console_Output("%sVersion %.2f built at %s\n", DA::Get_Message_Prefix(), Version, CompileTime);
