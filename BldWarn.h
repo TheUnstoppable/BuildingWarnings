@@ -72,6 +72,10 @@ private:
 	static Vector3 Color50;
 	static Vector3 Color25;
 	static Vector3 ColorRepairing;
+	static bool Enable75;
+	static bool Enable50;
+	static bool Enable25;
+	static bool EnableRepairing;
 };
 
 #endif

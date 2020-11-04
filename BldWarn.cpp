@@ -71,6 +71,10 @@ Vector3 UP_Building_Warnings::Color75;
 Vector3 UP_Building_Warnings::Color50;
 Vector3 UP_Building_Warnings::Color25;
 Vector3 UP_Building_Warnings::ColorRepairing;
+bool UP_Building_Warnings::Enable75;
+bool UP_Building_Warnings::Enable50;
+bool UP_Building_Warnings::Enable25;
+bool UP_Building_Warnings::EnableRepairing;
 
 void UP_Building_Warnings::Init()
 {
@@ -93,6 +97,11 @@ void UP_Building_Warnings::Init()
 
     PercentCooldown = 20.0f;
     RepairCooldown = 30.0f;
+
+    Enable75 = true;
+    Enable50 = true;
+    Enable25 = true;
+    EnableRepairing = true;
 
     IncludeList = DynamicVectorClass<StringClass>();
     ExcludeList = DynamicVectorClass<StringClass>();
@@ -134,6 +143,11 @@ void UP_Building_Warnings::Settings_Loaded_Event()
     ShowEnemy = INI->Get_Bool("Settings", "ShowEnemy", false);
     UseDAPrefix = INI->Get_Bool("Settings", "UseDAPrefix", true);
     UseTeamColors = INI->Get_Bool("Settings", "UseTeamColors", true);
+
+    Enable75 = INI->Get_Bool("Enable", "Enable75", true);
+    Enable50 = INI->Get_Bool("Enable", "Enable50", true);
+    Enable25 = INI->Get_Bool("Enable", "Enable25", true);
+    EnableRepairing = INI->Get_Bool("Enable", "EnableRepairing", true);
 
     IncludeList.Clear();
     INISection* IncludeSection = INI->Get_Section("Includes");
