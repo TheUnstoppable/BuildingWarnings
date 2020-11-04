@@ -271,12 +271,8 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
             }
         }
 
-        delete Params->Message;
         delete Params;
-        delete Format;
     }
-
-    delete Preset;
 }
 
 void UP_Building_Warnings::SendStateMessage(FormatParams *Params)
