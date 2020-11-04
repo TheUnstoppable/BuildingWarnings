@@ -11,24 +11,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{20FDD398-F2A5-4563-AC1A-3133D1DE264F}</ProjectGuid>
+    <ProjectGuid>{CBDFD380-2DB6-4651-8DB8-CBC0F1612E5D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>BldWarnings</RootNamespace>
-    <ProjectName>BldWarnings</ProjectName>
+    <RootNamespace>BuildingWarnings</RootNamespace>
+    <ProjectName>BuildingWarnings</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>false</WholeProgramOptimization>
-    <PlatformToolset>v110_xp</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v110_xp</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -42,7 +42,6 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)temp\$(ProjectName)\$(Configuration)\</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
@@ -55,16 +54,16 @@
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">da_$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">da_$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <AdditionalIncludeDirectories>.;..\MemoryManager;..\scripts;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>DAPLUGIN;_CRT_SECURE_NO_DEPRECATE;WIN32;_DEBUG;_WINDOWS;_USRDLL;EXAMPLEPLUGIN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DAPLUGIN;_CRT_SECURE_NO_DEPRECATE;WIN32;_DEBUG;_WINDOWS;_USRDLL;BLDWARN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
       <ExceptionHandling>
@@ -98,7 +97,6 @@
       <BaseAddress>0x11000000</BaseAddress>
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalLibraryDirectories>..\bin\debug</AdditionalLibraryDirectories>
-      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
     <PostBuildEvent>
       <Command>if defined RenPath (
@@ -126,13 +124,13 @@ copy "$(TargetPath)" "%RenServerPath%\$(TargetFileName)"
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <AdditionalIncludeDirectories>.;..\MemoryManager;..\scripts;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>DAPLUGIN;_CRT_SECURE_NO_DEPRECATE;WIN32;NDEBUG;_WINDOWS;_USRDLL;EXAMPLEPLUGIN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DAPLUGIN;_CRT_SECURE_NO_DEPRECATE;WIN32;NDEBUG;_WINDOWS;_USRDLL;BLDWARN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>
       </ExceptionHandling>
@@ -149,7 +147,6 @@ copy "$(TargetPath)" "%RenServerPath%\$(TargetFileName)"
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
-      <AdditionalOptions>/EHsc %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -191,7 +188,7 @@ copy "$(TargetPath)" "%RenServerPath%\$(TargetFileName)"
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BldWarnings.cpp" />
+    <ClCompile Include="BldWarn.cpp" />
     <ClCompile Include="General.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -200,7 +197,7 @@ copy "$(TargetPath)" "%RenServerPath%\$(TargetFileName)"
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BldWarnings.h" />
+    <ClInclude Include="BldWarn.h" />
     <ClInclude Include="General.h" />
   </ItemGroup>
   <ItemGroup>
@@ -213,6 +210,9 @@ copy "$(TargetPath)" "%RenServerPath%\$(TargetFileName)"
     <ProjectReference Include="..\shared\shared.vcxproj">
       <Project>{6636e311-e860-4f52-9d23-fe38e38d6020}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BuildingWarnings.ini" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
