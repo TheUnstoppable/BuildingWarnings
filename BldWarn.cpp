@@ -1,18 +1,11 @@
-/*  
+/*
     Building Warnings
     Copyright 2020 Unstoppable
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+    This plugin is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version. See GNU General Public License for more details.
 */
 
 #include "General.h"
@@ -51,8 +44,9 @@ const char UP_Building_Warnings::Sounds[4][2][50] = {
 
 DASettingsClass* UP_Building_Warnings::INI = 0;
 
+#pragma region Unused Static Initializer
 // Using static, because values are unavailable outside of Settings_Loaded_Event when non-static.
-// I don't have time, at least works.
+// I don't have time, at least works. (Fixed and commented out)
 //StringClass UP_Building_Warnings::Format75;
 //StringClass UP_Building_Warnings::Format50;
 //StringClass UP_Building_Warnings::Format25;
@@ -73,6 +67,7 @@ DASettingsClass* UP_Building_Warnings::INI = 0;
 //bool UP_Building_Warnings::Enable50;
 //bool UP_Building_Warnings::Enable25;
 //bool UP_Building_Warnings::EnableRepairing;
+#pragma endregion
 
 void UP_Building_Warnings::Init()
 {
