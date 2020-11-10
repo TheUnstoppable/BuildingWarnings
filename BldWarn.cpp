@@ -22,6 +22,7 @@
 #include "BldWarn.h"
 
 #define Cooldown(WState, Data) Start_Timer(static_cast<int>(WState), WState == WarnState::WARNSTATE_REPAIRING ? RepairCooldown : PercentCooldown, false, Data)
+#define ColorCast(Color) static_cast<int>(Color)
 
 const char UP_Building_Warnings::Sounds[4][2][50] = {
         {
@@ -245,7 +246,7 @@ void UP_Building_Warnings::Damage_Event(DamageableGameObj* Victim, ArmedGameObj*
 
 void UP_Building_Warnings::SendStateMessage(FormatParams *Params)
 {
-    if (!Is_Timer(static_cast<int>(Params->State), Commands->Get_ID(Params->Building)))
+    if (!Is_Timer(ColorCast(Params->State), Commands->Get_ID(Params->Building)))
     {
         Vector3 Color;
 
@@ -295,11 +296,11 @@ void UP_Building_Warnings::SendStateMessage(FormatParams *Params)
             break;
         }
 
-        DA::Team_Color_Message(Params->Team, (int)Color.X, (int)Color.Y, (int)Color.Z, "%s%s", UseDAPrefix ? DA::Get_Message_Prefix() : "", (*Params->Out));
+        DA::Team_Color_Message(Params->Team, ColorCast(Color.X), ColorCast(Color.Y), ColorCast(Color.Z), "%s%s", UseDAPrefix ? DA::Get_Message_Prefix() : "", (*Params->Out));
 
         if (ShowEnemy && Params->State != WarnState::WARNSTATE_REPAIRING)
         {
-            DA::Team_Color_Message(PTTEAM(Params->Team), (int)Color.X, (int)Color.Y, (int)Color.Z, "%s%s", UseDAPrefix ? DA::Get_Message_Prefix() : "", (*Params->Out));
+            DA::Team_Color_Message(PTTEAM(Params->Team), ColorCast(Color.X), ColorCast(Color.Y), ColorCast(Color.Z), "%s%s", UseDAPrefix ? DA::Get_Message_Prefix() : "", (*Params->Out));
         }
 
         Cooldown(Params->State, Commands->Get_ID(Params->Building));
