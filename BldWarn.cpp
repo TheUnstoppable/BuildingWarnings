@@ -86,7 +86,7 @@ void UP_Building_Warnings::Init()
     Register_Object_Event(DAObjectEvent::DAMAGERECEIVED, DAObjectEvent::ALL, INT_MAX);
 
     Console_Output("%sBuilding Warnings successfully initialized!\n", DA::Get_Message_Prefix());
-    Console_Output("%sVersion %.2f built at %s\n", DA::Get_Message_Prefix(), Version, CompileTime);
+    Console_Output("%sVersion %.2f by Unstoppable, built at %s\n", DA::Get_Message_Prefix(), Version, CompileTime);
 }
 
 void UP_Building_Warnings::Settings_Loaded_Event()
