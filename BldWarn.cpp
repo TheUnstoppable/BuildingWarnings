@@ -118,21 +118,27 @@ void UP_Building_Warnings::Settings_Loaded_Event()
 
     IncludeList.Clear();
     INISection* IncludeSection = INI->Get_Section("Includes");
-    for (INIEntry* Entry = IncludeSection->EntryList.First(); Entry && Entry->Is_Valid(); Entry = Entry->Next())
+    if (IncludeSection)
     {
-        if (!strcmp(Entry->Value, "1"))
+        for (INIEntry* Entry = IncludeSection->EntryList.First(); Entry && Entry->Is_Valid(); Entry = Entry->Next())
         {
-            IncludeList.Add(Entry->Entry);
+            if (!strcmp(Entry->Value, "1"))
+            {
+                IncludeList.Add(Entry->Entry);
+            }
         }
     }
 
     ExcludeList.Clear();
     INISection* ExcludeSection = INI->Get_Section("Excludes");
-    for (INIEntry* Entry = ExcludeSection->EntryList.First(); Entry && Entry->Is_Valid(); Entry = Entry->Next())
+    if (ExcludeSection)
     {
-        if (!strcmp(Entry->Value, "1"))
+        for (INIEntry* Entry = ExcludeSection->EntryList.First(); Entry && Entry->Is_Valid(); Entry = Entry->Next())
         {
-            ExcludeList.Add(Entry->Entry);
+            if (!strcmp(Entry->Value, "1"))
+            {
+                ExcludeList.Add(Entry->Entry);
+            }
         }
     }
 }
