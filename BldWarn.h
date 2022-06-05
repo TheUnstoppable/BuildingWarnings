@@ -15,7 +15,7 @@
 #include "da_event.h"
 
 #define CompileTime StringFormat("%s %s", __DATE__, __TIME__)
-#define Version 1.32f
+#define Version 1.33f
 
 enum WarnState
 {
